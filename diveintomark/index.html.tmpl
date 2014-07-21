@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title><TMPL_VAR name></title>
+<link rel=alternate type=application/atom+xml href=/atom.xml title=Feed>
+<style type=text/css media=screen>
+html{background:#FFF}
+body{font:normal medium 'Gill Sans',Optima,Verdana,sans-serif;margin:40px auto 1em auto;width:728px;line-height:180%}
+#footer{clear:both;text-align:center;font-size:small}
+img{border:0}
+h1,.feedflare{display:none}
+.horizontal,.simple li{margin:0;padding:0;list-style:none;display:inline}
+.simple li:before{content:"+ "}
+.simple > li:first-child:before{content:""}
+.author{text-decoration:none;display:block;float:right;margin-left:2em;}
+ul{list-style:none;margin-left:0;padding-left:0}
+li{clear:both;margin-bottom:1em}
+.content{margin:1em 40px}
+</style>
+</head>
+<body>
+<h1><TMPL_VAR name></h1>
+<ul>
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+</ul>
+<h2 class=date><TMPL_VAR new_date></h2>
+<ul>
+</TMPL_IF>
+<li<TMPL_IF channel_language> lang="<TMPL_VAR channel_language>"</TMPL_IF>>
+<a class=author href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">"><TMPL_VAR channel_name ESCAPE="HTML"></a><TMPL_IF title> <a<TMPL_IF link> href="<TMPL_VAR link ESCAPE="HTML">"</TMPL_IF><TMPL_IF title_language> lang="<TMPL_VAR title_language>"</TMPL_IF>><TMPL_VAR title></a></TMPL_IF>
+<TMPL_IF content><div class="content"><TMPL_VAR content></div></TMPL_IF>
+</li>
+</TMPL_LOOP>
+</ul>
+<hr>
+<div id=footer>
+<p>Theme by Mark Pilgrim.</p>
+<p>Sources:</p>
+<ul class="simple horizontal">
+<TMPL_LOOP Channels>
+<li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a></li>
+</TMPL_LOOP>
+</ul>
+</div>
+</body>
+</html>
