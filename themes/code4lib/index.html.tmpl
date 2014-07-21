@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+### Fancy Planet HTML template.
+###
+### When combined with the stylesheet and images in the output/ directory
+### of the Planet source, this gives you a much prettier result than the
+### default examples template and demonstrates how to use the config file
+### to support things like faces
+###
+### For documentation on the more boring template elements, see
+### examples/config.ini and examples/index.html.tmpl in the Planet source.
+
+<head>
+<title><TMPL_VAR name></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="planet.css" type="text/css">
+<meta name="generator" content="<TMPL_VAR generator>">
+<link rel='alternate' type='application/rss+xml' title='RSS 1.0' href='http://code4lib.org/planet/rss10.xml' />
+<link rel='alternate' type='application/rss+xml' title='RSS 2.0' href='http://code4lib.org/planet/rss20.xml' />
+<link rel='meta' type='application/rdf+xml' title='FOAF' href='http://code4lib.org/planet/foafroll.xml' />
+<link rel='meta' type='application/atom+xml' title='Atom' href='http://code4lib.org/planet/atom.xml' />
+<link rel='search' type='application/opensearchdescription+xml' title='planet code4lib' href='http://code4lib.org/planet/opensearch.xml' />
+</head>
+
+<body>
+
+<div class="banner">
+    <img alt="Planet Code4Lib" src="http://code4lib.org/files/logo/c4l_planet_logo/c4l_planet_logo.RGB_400px.png" align="right" width="400" />
+    <!-- <h1><TMPL_VAR name></h1> -->
+</div>
+
+<p>Blogs and feeds of interest to the <a href="http://www.code4lib.org">Code4Lib</a> community, aggregated.</p>
+<br style="clear:all"/>
+
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<h2><TMPL_VAR new_date></h2>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+
+### Planet provides template variables for *all* configuration options for
+### the channel (and defaults), even if it doesn't know about them.  We
+### exploit this here to add hackergotchi faces to our channels.  Planet
+### doesn't know about the "face", "facewidth" and "faceheight" configuration
+### variables, but makes them available to us anyway.
+
+<h3 class="channel_heading"><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+<TMPL_IF channel_face>
+<img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
+</TMPL_IF>
+</TMPL_IF>
+
+
+<TMPL_IF title>
+<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title ESCAPE="html"></a></h4>
+</TMPL_IF>
+<div class="entry">
+<p>
+<TMPL_VAR content>
+</p>
+<p class="date">
+<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF author>by <TMPL_VAR author> at </TMPL_IF><TMPL_VAR date></a>
+</p>
+</div>
+</TMPL_LOOP>
+
+<div class="sidebar">
+
+
+<p style="text-align: center">
+<a href="atom.xml">atom</a> |
+<a href="rss10.xml">rss1.0</a> |
+<a href="rss20.xml">rss2.0</a> <br />
+<a href="opml.xml">opml</a> |
+<a href="foafroll.xml">foaf</a>
+</p>
+
+<!-- Google CSE Search Box Begins -->
+<form id="searchbox_017716194421589436379:zdoxzpetaxk"
+  action="http://www.google.com/cse">
+  <input type="hidden" name="cx"
+    value="017716194421589436379:zdoxzpetaxk" /><br />
+  <input name="q" type="text" size="30" /><br />
+  <input type="hidden" name="cof" value="FORID:0" /><br />
+</form>
+<!-- Google CSE Search Box Ends -->
+
+<ul>
+<TMPL_LOOP Channels>
+<li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a> <a href="<TMPL_VAR url ESCAPE="HTML">">(feed)</a></li>
+</TMPL_LOOP>
+</ul>
+
+<p>
+<strong>Last updated:</strong><br>
+<TMPL_VAR date><br>
+All times are UTC.
+<br>
+Powered by <a href="http://www.planetplanet.org/">Planet</a>.
+</p>
+
+</div>
+</body>
+
+</html>
