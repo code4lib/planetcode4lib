@@ -1,3 +1,4 @@
 [submodule "venus"]
 	path = venus
-	url = git@github.com:rubys/venus.git
+	# url = git@github.com:rubys/venus.git
+	url = https://github.com/rubys/venus.git
