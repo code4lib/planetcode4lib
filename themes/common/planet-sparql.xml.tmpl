@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+<head>
+	<variable name="date"/>
+	<variable name="title"/>
+	<variable name="description"/>
+	<variable name="link"/>
+	<variable name="icon"/>
+</head>
+<results ordered="false" distinct="true">
+	<TMPL_LOOP Items>
+	<result>
+		<binding name="date"><literal><TMPL_VAR date_iso></literal></binding>
+		<binding name="title"><literal<TMPL_IF title_language> xml:lang="<TMPL_VAR title_language>"</TMPL_IF>><TMPL_VAR title ESCAPE="HTML"></literal></binding>
+		<binding name="description"><literal<TMPL_IF content_language> xml:lang="<TMPL_VAR content_language>"</TMPL_IF>><TMPL_VAR content ESCAPE="HTML"></literal></binding>
+		<binding name="link"><literal><TMPL_VAR link ESCAPE="HTML"></literal></binding>
+		<TMPL_IF channel_timeline_icon>
+		<binding name="icon"><literal>http://simile.mit.edu/timeline/api/images/<TMPL_VAR channel_timeline_icon></literal></binding>
+		</TMPL_IF>
+	</result>
+	</TMPL_LOOP>
+</results>
+</sparql>
