@@ -147,3 +147,7 @@ a:hover {
 	text-decoration: underline !important;
 	color: blue !important;
 }
+
+.banner {
+    padding-bottom: 30px;
+}
