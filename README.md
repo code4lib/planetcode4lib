@@ -4,7 +4,7 @@
 
 ## Installation
 
-    > git clone git@github.com/code4lib/planetcode4lib.git
+    > git clone git@github.com:code4lib/planetcode4lib.git
     > cd planetcode4lib
 	> git submodule init
 	> git submodule update
