@@ -2,3 +2,4 @@
 .bundle/
 gems/
 cache/
+themes/*/*tmplc
