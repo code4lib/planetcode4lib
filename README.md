@@ -14,7 +14,7 @@ The generated files will be in `output/`.
 
 To test it with one feed, run
 
-> ./venus/planet.py --verbose test.ini
+    > ./venus/planet.py --verbose test.ini
 
 ## Adding a feed
 
