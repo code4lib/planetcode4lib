@@ -12,7 +12,6 @@ html{background:#FFF}
 body{font:normal medium 'Gill Sans',Optima,Verdana,sans-serif;margin:40px auto 1em auto;width:728px;line-height:180%}
 #footer{clear:both;text-align:center;font-size:small}
 img{border:0}
-h1,.feedflare{display:none}
 .horizontal,.simple li{margin:0;padding:0;list-style:none;display:inline}
 .simple li:before{content:"+ "}
 .simple > li:first-child:before{content:""}
@@ -23,7 +22,8 @@ li{clear:both;margin-bottom:1em}
 </style>
 </head>
 <body>
-<h1><TMPL_VAR name></h1>
+<h1><img src="c4l-logo.png" alt="<TMPL_VAR name>"></h1>
+<p>Blogs and feeds of interest to the <a href="http://www.code4lib.org">Code4Lib</a> community, aggregated.</p>
 <ul>
 <TMPL_LOOP Items>
 <TMPL_IF new_date>
@@ -46,6 +46,13 @@ li{clear:both;margin-bottom:1em}
 <li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a></li>
 </TMPL_LOOP>
 </ul>
+<p style="text-align: center">
+  <a href="atom.xml">Atom</a> |
+  <a href="rss10.xml">RSS 1.0</a> |
+  <a href="rss20.xml">RSS 2.0</a> |
+  <a href="opml.xml">OPML</a> |
+  <a href="foafroll.xml">FOAF</a>
+</p>
 </div>
 </body>
 </html>
