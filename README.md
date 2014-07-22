@@ -32,7 +32,11 @@ To update:
 
     > # Become the c4l user
     > cd /var/www/code4lib.org/planet_new/planetcode4lib
-	> git pull
+    > git pull
+
+The relevant line in c4l's crontab is:
+
+    10,40 * * * * cd /var/www/code4lib.org/planet_new/planetcode4lib; ./venus/planet.py --expunge 2>&1
 
 ## Adding a feed
 
