@@ -111,11 +111,11 @@ img.face {
 	color: grey;
 }
 
-.sidebar ul li a {
+.sidebar a { /* sidebar ul li a */
         text-decoration: none;
 }
 
-.sidebar ul li a:hover {
+.sidebar a:hover {
         text-decoration: underline;
 }
 
@@ -124,8 +124,8 @@ img.face {
 }
 
 .sidebar p {
-	border-top: 1px solid grey;
-	margin-top: 30px;
+	/* border-top: 1px solid grey; */
+	margin-top: 20px;
 	padding-top: 10px;
 
 	padding-left: 5px;
