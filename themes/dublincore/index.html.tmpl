@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Planet Code4Lib</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="<TMPL_VAR generator>">
+    <link rel='alternate' type='application/atom+xml' title='Atom' href='http://code4lib.org/planet/atom.xml' />
+    <link rel='alternate' type='application/rss+xml' title='RSS 1.0' href='http://code4lib.org/planet/rss10.xml' />
+    <link rel='alternate' type='application/rss+xml' title='RSS 2.0' href='http://code4lib.org/planet/rss20.xml' />
+    <link rel='meta' type='application/rdf+xml' title='FOAF' href='http://code4lib.org/planet/foafroll.xml' />
+    <link rel='search' type='application/opensearchdescription+xml' title='planet code4lib' href='http://code4lib.org/planet/opensearch.xml' />
+
+    <link rel="stylesheet" href="normalize.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title"><img alt="Planet Code4Lib" src="c4l-logo.png"/ alt="Planet Code4Lib" title="Planet Code4Lib"></h1>
+
+                <nav>
+		  <p>Blogs and feeds of interest to the Code4Lib community, aggregated.</p>
+		  <p>See also: <a href="http://archivesblogs.com/">ArchivesBlogs</a>, <a href="http://planetcataloging.org/">Planet Cataloging</a>.</p>
+		  <p><a href="atom.xml">Atom</a>, <a href="rss10.xml">RSS 1.0</a>, <a href="rss20.xml">RSS 2.0</a>. Blogs: <a href="opml.xml">OPML</a>, <a href="foafroll.xml">FOAF</a></p>
+		  <p><a href="https://github.com/code4lib/planetcode4lib">Would you like your feed to be added?</a></p>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+
+	      <TMPL_LOOP Items>
+
+                <article>
+                    <header>
+		      <TMPL_IF title>
+			<h1><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title ESCAPE="html"></a> / <TMPL_VAR channel_name></h1>
+		      </TMPL_IF>
+                    </header>
+
+		      <TMPL_VAR content>
+
+		      <footer>
+		      </footer>
+
+                </article>
+
+                <aside>
+		  <ul>
+		    <li> DC.creator: <TMPL_VAR author_name> </li>
+ 		    <li> DC.title: <TMPL_VAR title> </li>
+		    <li> DC.publisher: <a href="<TMPL_VAR channel_link ESCAPE="HTML">"><TMPL_VAR channel_name></a> </li>
+		    <li> DC.date: <TMPL_VAR date> </li>
+		    <li> DC.rights: <TMPL_VAR channel_rights> </li>
+ 		  </ul>
+
+                </aside>
+
+		<div style="clear: both;" />
+
+	      </TMPL_LOOP>
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+	      <TMPL_LOOP Channels>
+		<a href="<TMPL_VAR url ESCAPE="HTML">"><img src="feed-icon-10x10.png" alt="(feed)"></a> <a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a>
+	      </TMPL_LOOP>
+            </footer>
+        </div>
+
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+    </body>
+</html>

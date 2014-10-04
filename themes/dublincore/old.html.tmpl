@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<title><TMPL_VAR name></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="planet.css" type="text/css">
+<meta name="generator" content="<TMPL_VAR generator>">
+<link rel='alternate' type='application/rss+xml' title='RSS 1.0' href='http://code4lib.org/planet/rss10.xml' />
+<link rel='alternate' type='application/rss+xml' title='RSS 2.0' href='http://code4lib.org/planet/rss20.xml' />
+<link rel='meta' type='application/rdf+xml' title='FOAF' href='http://code4lib.org/planet/foafroll.xml' />
+<link rel='meta' type='application/atom+xml' title='Atom' href='http://code4lib.org/planet/atom.xml' />
+<link rel='search' type='application/opensearchdescription+xml' title='planet code4lib' href='http://code4lib.org/planet/opensearch.xml' />
+</head>
+
+<body>
+
+<div class="banner">
+    <img alt="Planet Code4Lib" src="c4l-logo.png" align="right" width="400" />
+</div>
+<br style="clear:all;" />
+
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<h2><TMPL_VAR new_date></h2>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+
+### Planet provides template variables for *all* configuration options for
+### the channel (and defaults), even if it doesn't know about them.  We
+### exploit this here to add hackergotchi faces to our channels.  Planet
+### doesn't know about the "face", "facewidth" and "faceheight" configuration
+### variables, but makes them available to us anyway.
+
+<h3 class="channel_heading"><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+<TMPL_IF channel_face>
+<img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
+</TMPL_IF>
+</TMPL_IF>
+
+
+<TMPL_IF title>
+<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title ESCAPE="html"></a></h4>
+</TMPL_IF>
+<div class="entry">
+<p>
+<TMPL_VAR content>
+</p>
+<p class="date">
+<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF author>by <TMPL_VAR author> at </TMPL_IF><TMPL_VAR date></a>
+</p>
+</div>
+</TMPL_LOOP>
+
+<div class="sidebar">
+
+  <p>
+
+    Blogs and feeds of interest to the <a href="http://www.code4lib.org/">Code4Lib</a> community, aggregated.
+
+  </p>
+
+  <p>
+
+    Want to be here?  Ask William Denton (<a href="mailto:wtd@pobox.com">wtd@pobox.com</a>, <a href="https://twitter.com/wdenton">@wdenton</a>)  or make a pull request to <a href="https://github.com/code4lib/planetcode4lib">the GitHub repo</a>.
+
+  </p>
+
+  <hr />
+
+  <h2>Friends</h2>
+
+    <ul>
+      <li> <a href="http://archivesblogs.com/">ArchivesBlogs</a></li>
+      <li> <a href="http://planetcataloging.org/">Planet Cataloging</a></li>
+    </ul>
+
+  <hr />
+
+<p style="text-align: center">
+  Feeds: <br />
+  <a href="atom.xml">Atom</a> | <a href="rss10.xml">RSS 1.0</a> | <a href="rss20.xml">RSS 2.0</a>
+  <br />
+  Blogs: <br />
+  <a href="opml.xml">OPML</a> | <a href="foafroll.xml">FOAF</a>
+</p>
+
+<!-- Google CSE Search Box Begins -->
+<!-- form id="searchbox_017716194421589436379:zdoxzpetaxk" action="http://www.google.com/cse">
+  <input type="hidden" name="cx"
+	 value="017716194421589436379:zdoxzpetaxk" /><br />
+  <input name="q" type="text" size="15" /><br />
+  <input type="hidden" name="cof" value="FORID:0" /><br />
+</form -->
+<!-- Google CSE Search Box Ends -->
+
+<ul>
+<TMPL_LOOP Channels>
+<li> <a href="<TMPL_VAR url ESCAPE="HTML">"><img src="feed-icon-10x10.png" alt="(feed)"></a> <a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a> </li>
+</TMPL_LOOP>
+</ul>
+
+  <p>
+
+    Last updated: <br />
+
+    <TMPL_VAR date>
+
+  </p>
+
+  <p>
+
+    All times are UTC.
+
+    <br>
+
+    Powered by <a href="http://www.planetplanet.org/">Planet</a>.
+
+</p>
+
+</div>
+</body>
+
+</html>
