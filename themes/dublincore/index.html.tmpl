@@ -70,7 +70,7 @@
 
                 </aside>
 
-		<div style="clear: both;" />
+		<div style="clear: both;"></div>
 
 	      </TMPL_LOOP>
 
@@ -79,9 +79,11 @@
 
         <div class="footer-container">
             <footer class="wrapper">
+	      <ul>
 	      <TMPL_LOOP Channels>
-		<a href="<TMPL_VAR url ESCAPE="HTML">"><img src="feed-icon-10x10.png" alt="(feed)"></a> <a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a>
+		<li><a href="<TMPL_VAR url ESCAPE="HTML">"><img src="feed-icon-10x10.png" alt="(feed)"></a> <a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a></li>
 	      </TMPL_LOOP>
+	      </ul>
             </footer>
         </div>
 

@@ -84,7 +84,7 @@ a:active {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px Arial, sans-serif;
 }
 
 .wrapper {
@@ -93,7 +93,7 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL:
    =================== */
 
 .header-container {
@@ -151,6 +151,21 @@ body {
 .footer-container footer {
     color: white;
     padding: 20px 0;
+}
+
+footer li {
+    margin: ;
+    padding: 0;
+    list-style: none;
+    display: inline;
+}
+
+footer li:before {
+    content: "+ ";
+}
+
+footer > li:first-child:before {
+    content: "";
 }
 
 /* ===============
