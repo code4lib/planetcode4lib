@@ -153,20 +153,20 @@ body {
     padding: 20px 0;
 }
 
-footer li {
-    margin: ;
-    padding: 0;
-    list-style: none;
-    display: inline;
-}
+/* footer li { */
+/*     margin: ; */
+/*     padding: 0; */
+/*     list-style: none; */
+/*     display: inline; */
+/* } */
 
-footer li:before {
-    content: "+ ";
-}
+/* footer li:before { */
+/*     content: "+ "; */
+/* } */
 
-footer > li:first-child:before {
-    content: "";
-}
+/* footer > li:first-child:before { */
+/*     content: ""; */
+/* } */
 
 /* ===============
     ALL: IE Fixes
