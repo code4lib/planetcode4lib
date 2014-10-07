@@ -148,6 +148,10 @@ body {
     padding: 0;
 }
 
+.dc_element {
+    font-family: monospace;
+}
+
 .footer-container footer {
     color: white;
     padding: 20px 0;
