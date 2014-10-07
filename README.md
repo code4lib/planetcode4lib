@@ -38,8 +38,8 @@ The relevant line in c4l's crontab is:
 
     10,40 * * * * cd /var/www/code4lib.org/planet_new/planetcode4lib; ./venus/planet.py --expunge 2>&1
 
-## Adding a feed
+## Adding (or removing) a feed
 
-Additions are welcome!
+Additions are welcome!  Email [William Denton](mailto:wtd@pobox.com) or submit a pull request modifying `config.ini`.
 
-Email [William Denton](mailto:wtd@pobox.com) or submit a pull request modifying `config.ini`.
+If you're on the list but don't want to be, please do the same, and you'll be removed, no questions asked.
